@@ -1,6 +1,9 @@
 package com.example.instagramlogin;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,21 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    Button loginButton;
+
+    private void bindingView() {
+        loginButton = findViewById(R.id.LoginButton);
+    }
+
+    private void bindingAction() {
+        loginButton.setOnClickListener(this::onBtnChangeClick);
+    }
+
+    private void onBtnChangeClick(View view) {
+        Toast toast = Toast.makeText(this, "Login fail!", Toast.LENGTH_SHORT);
+        toast.show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +38,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        bindingView();
+        bindingAction();
+
     }
 }
