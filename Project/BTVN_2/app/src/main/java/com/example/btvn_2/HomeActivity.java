@@ -52,4 +52,14 @@ public class HomeActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("name");
         showNameData.setText(name);
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        clearNameData();
+    }
+
+    private void clearNameData() {
+        showNameData.setText("");
+    }
 }
