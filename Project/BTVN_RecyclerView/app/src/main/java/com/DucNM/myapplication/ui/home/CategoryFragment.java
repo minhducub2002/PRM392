@@ -3,12 +3,18 @@ package com.DucNM.myapplication.ui.home;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.DucNM.myapplication.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +34,32 @@ public class CategoryFragment extends Fragment {
 
     public CategoryFragment() {
         // Required empty public constructor
+    }
+
+    private List<Category> data;
+    private RecyclerView rcv;
+
+    private void createData() {
+        data = new ArrayList<>();
+        for (int i = 0; i < 100; i++) {
+            data.add(new Category(R.drawable.pharmacy, "pharmacy"));
+            data.add(new Category(R.drawable.registry, "registry"));
+            data.add(new Category(R.drawable.cartwheel, "cartwheel"));
+            data.add(new Category(R.drawable.clothing, "clothing"));
+            data.add(new Category(R.drawable.shoes, "shoes"));
+            data.add(new Category(R.drawable.accessories, "accessories"));
+            data.add(new Category(R.drawable.baby, "baby"));
+            data.add(new Category(R.drawable.home, "home"));
+            data.add(new Category(R.drawable.patio_garden, "patio & garden"));
+        }
+    }
+
+    private void bindingView(View view) {
+        rcv = view.findViewById(R.id.rcv);
+    }
+
+    private void bindingAction() {
+
     }
 
     /**
@@ -61,6 +93,23 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_category, container, false);
+        //return inflater.inflate(R.layout.fragment_category, container, false);
+        View view = inflater.inflate(R.layout.fragment_category, container, false);
+
+        createData();
+        bindingView(view);
+        bindingAction();
+        initRcv();
+        Log.d("DucNM_Debug", "create Category View roi nha");
+        Log.d("DucNM_Debug", "rcv: " + rcv);
+        Log.d("DucNM_Debug", "data8: " + data.get(8).getCategoryName());
+        return view;
     }
+
+    private void initRcv() {
+        RecyclerView.Adapter adapter = new ListCategoryAdapter(data);
+        rcv.setAdapter(adapter);
+        rcv.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+    }
+
 }
