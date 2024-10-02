@@ -25,21 +25,21 @@
                 app:popupTheme="@style/Theme.BTVN_RecyclerView.PopupOverlay" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <ImageButton
-            android:id="@+id/search_button"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_weight="3"
-            android:background="@color/color_primary"
-            app:srcCompat="@drawable/icons8_search" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/search_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="56dp"-->
+<!--            android:layout_weight="3"-->
+<!--            android:background="@color/color_primary"-->
+<!--            app:srcCompat="@drawable/icons8_search" />-->
 
-        <ImageButton
-            android:id="@+id/shopping_cart_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:background="@color/color_primary"
-            app:srcCompat="@drawable/shopping_cart" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/shopping_cart_button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="3"-->
+<!--            android:background="@color/color_primary"-->
+<!--            app:srcCompat="@drawable/shopping_cart" />-->
 
     </LinearLayout>
 

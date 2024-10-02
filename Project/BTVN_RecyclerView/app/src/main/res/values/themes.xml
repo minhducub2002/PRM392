@@ -14,6 +14,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyToolbarStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/color_primary</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <style name="Theme.BTVN_RecyclerView.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
